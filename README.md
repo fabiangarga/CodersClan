@@ -7,6 +7,7 @@ Wordpress theme for the acceptance challenge
 
 * Wordpress Version 4.6.1.
 * Theme Starter [Timber](https://github.com/timber/starter-theme).
+* __Plugins:__
 
 | Plugin                    | Version       |
 | ------------------------- |:-------------:|
