@@ -6,4 +6,9 @@ Wordpress theme for the acceptance challenge
 ## Theme Specifications
 
 * Wordpress Version 4.6.1.
-* Theme Starter [Timber](https://travis-ci.org/timber/starter-theme). 
+* Theme Starter [Timber](https://github.com/timber/starter-theme).
+* #H1 Plugins:
+| Plugin                    | Version       |
+| ------------------------- |:-------------:|
+| Advanced Custom Field PRO | 5.4.8         |  
+| Timber                    | 1.1.8         |
