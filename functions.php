@@ -118,12 +118,11 @@ new StarterSite();
  *
  */	
 $cc_includes = [
-    'src/admin.php',
 	'src/setup.php'
 ];
 array_walk($cc_includes, function ($f) {
     if (!locate_template($f, true, true)) {
-        trigger_error(sprintf(__('Error locating %s for inclusion', 'sage'), $f), E_USER_ERROR);
+        trigger_error(sprintf(__('Error locating %s for inclusion', 'codersclan'), $f), E_USER_ERROR);
     }
 });
 
