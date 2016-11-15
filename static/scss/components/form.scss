@@ -1,0 +1,73 @@
+#form{
+    background: #09183f; 
+    background: -moz-linear-gradient(-45deg,  #09183f 0%, #1c71b7 100%); 
+    background: -webkit-linear-gradient(-45deg,  #09183f 0%,#1c71b7 100%);
+    background: linear-gradient(135deg,  #09183f 0%,#1c71b7 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#09183f', endColorstr='#1c71b7',GradientType=1 );
+    text-align: center;
+    padding:60px 0;
+    h2{
+        color:$color-orange;
+        font-weight:500;
+        margin-bottom:8px;
+    }
+    h3{
+        color:#FFF;
+    }
+    input{
+        border:2px solid $color-grey-light;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 15px 15px;
+        margin: 10px 0;
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 300;
+        &:focus{
+            outline:none;
+        }
+    }
+    form{
+        max-width:400px;
+        margin: 0 auto;
+    }
+    p{
+        position:relative;
+    }
+    .wpcf7-not-valid-tip{
+        position:absolute;
+        top: -35px;
+        font-size: 12px;
+        color: #FFF;
+    }
+    .wpcf7-submit{
+        border: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: transparent;
+        color: #FFF;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    .button{
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 10px;
+        height: 45px;
+    }
+    .wpcf7-response-output{
+        color: #FFF;
+        border: none!important;
+        line-height: 20px;
+        font-size: 14px;
+        margin:0;
+    }
+}

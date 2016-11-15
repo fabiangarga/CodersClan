@@ -1,1 +1,37 @@
-Copyright {{"now"|date('Y')}}
+<div class="container">
+
+    {# Start Social Links #}
+    <div class="social">
+        {% if options.social %}
+            <ul>
+            {% for social in options.social %}
+                <li>
+                    <a href="{{ social.social_link }}" target="_blank">
+                        <i class="fa {{ social.font_awesome_class }}"></i>
+                    </a>
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    {# End Social Links #}
+    
+    {# Start Footer Menu #}
+    <div class="foo-menu">
+        <ul>
+            <li>
+                {{ options.copyright }}
+            </li>
+            {% if options.check_menu %}
+                {% for item in options.menu.get_items %}
+                    <li class="{{item.classes | join(' ')}}">
+                        <a href="{{item.get_link}}">{{item.title}}</a>
+                    </li>
+                {% endfor %}
+            {% endif %}    
+        </ul>
+    </div>
+    {# End Footer Menu #}
+
+
+</div>

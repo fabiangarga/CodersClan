@@ -1,0 +1,47 @@
+.button{
+    border-radius:30px;
+    background-color:$color-green-dark;
+    padding:15px 45px 18px 45px;
+    color:#FFF;
+    text-transform: uppercase;
+    position:relative;
+    display: inline-block;
+    text-decoration: none;
+    font-size:16px;
+    z-index:1;
+    font-weight: 500;
+    &:after{
+        content: "";
+        position: absolute;
+        background-color: $color-green;
+        width: 100%;
+        bottom: 5px;
+        left: 0;
+        right: 0;
+        border-radius: 30px;
+        top: 0;
+        z-index: -1;
+
+    }       
+    .button-arrow{
+        position: absolute;
+        background: $color-green-dark;
+        height: 100%;
+        top: 0;
+        right: 0;
+        border-radius: 0 30px 30px 0;
+        width: 100px;
+        line-height: 47px;
+        z-index: -1;
+        text-align: right;
+        padding: 0 10px 0 0;
+        font-size: 25px;
+        transition:all .2s ease-in-out;
+    }
+    &:hover{
+        .button-arrow{
+            right:-35px;
+            transition:all .4s ease-in-out;
+        }
+    }
+}

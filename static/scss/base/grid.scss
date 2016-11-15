@@ -1,0 +1,15 @@
+.container{
+    padding:0 25px;
+    max-width:100%;
+    margin: 0 auto;
+    // Queries
+    @media only screen and ( min-width:$tablet ){
+        max-width:710px;
+    }
+    @media only screen and ( min-width:$tablet-large ){
+        max-width:910px;
+    }
+    @media only screen and ( min-width:$desktop ){
+        max-width:1030px;
+    }
+}

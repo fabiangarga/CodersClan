@@ -1,0 +1,27 @@
+#nav{
+    padding:20px 0;
+    position:relative;
+    z-index:99;
+}
+
+#header-welcome{
+    position:relative;
+    background-position: center center;
+    margin-top: -80px;
+    text-align: center;
+    color: #FFF;
+    .gradient-background{
+        opacity: .85;
+        position:absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+    }
+    .container{
+        top: 200px;
+        left: 0;
+        right: 0;
+        position:absolute;
+    }
+}

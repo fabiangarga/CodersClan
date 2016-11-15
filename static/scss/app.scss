@@ -1,0 +1,21 @@
+/* Coders Clan Styles */
+
+// Base: Contains Global Styles, Resets, Variables, Fonts, etc
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/font';
+@import 'base/grid';
+
+// Components: Each self-contained component
+@import 'components/buttons';
+@import 'components/item';
+@import 'components/sponsors';
+@import 'components/hero-content';
+@import 'components/slider';
+@import 'components/form';
+
+// Layout: Layout components, nav, header, footer
+@import 'layout/header';
+@import 'layout/footer';
+
+// Pages: Page specific styles

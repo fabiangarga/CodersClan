@@ -1,0 +1,32 @@
+{# 
+ # Slider Template Widget
+ # [image, text, client_image, client_job, client_name]
+ #}
+
+<div id="slider-client">
+
+    {# Start Slide Loop #}
+    {% for slide in post.get_field('slides') %}
+    
+        <div class="slide-item">
+            <div class="slide-image">
+                <img src="{{ TimberImage(slide.image).src }}" alt="{{ TimberImage(slide.image).caption }}">
+            </div>
+            <div class="slide-content">
+                <div class="slide-text">
+                    {{ slide.text }}
+                </div>
+                <div class="slide-client">
+                    <img src="{{ TimberImage(slide.client_image).src }}" alt="{{ slide.client_name }}">
+                    <p>
+                        <strong>{{ slide.client_name }}</strong>
+                        {{ slide.client_job }}
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    {% endfor %}
+    {# End Slide Loop #}
+
+</div>

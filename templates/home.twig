@@ -1,0 +1,144 @@
+{#
+ # Twig file for Home Template
+ # Custom Fields:
+ # - Header: 
+ #  + [ header_title, header_subtitle, header_button_text, header_button_link, header_image, header_image_gradient  ]
+ #  + [ header_sponsors [ sponsor_image, sponsor_name, sponsor_url ] ]
+ # - Content:
+ #  + [ content_items [ item_align, item_image, item_text ] ]
+ #  + [ hero_image, hero_image_big, hero_text ]
+ #  + [ content_slider, content_shortcode ]
+ # - Form: 
+ #  + [ form_title, form_shortcode, form_background ]
+#}
+
+
+{# Start Main Head #}
+{% block html_head_container %}
+	{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+{# End Main Head #}
+
+	{# Start Body #}
+	<body class="{{body_class}}" data-template="base.twig">
+		
+		{# Start Nav #}
+		<nav id="nav" >
+			<div class="container">
+				<a class="logo" href="{{site.url}}" rel="home">
+					<img src="{{ TimberImage(options.header_logo).src }}" alt="{{ site.name }}">
+				</a>
+			</div>
+		</nav>
+		{# End Nav #}
+		
+		{# Start Welcome Header #}
+		<section id="header-welcome" style="background-image:url('{{ TimberImage(post.header_image).src }}'); min-height:{{ TimberImage(post.header_image_gradient).height }}px;">
+			<img class="gradient-background" src="{{ TimberImage(post.header_image_gradient).src }}" style="min-height:{{ TimberImage(post.header_image_gradient).height }}px;" alt="CodersClan Gradient Background">
+			<div class="container">
+				<h1 class="cc bounceInLeft" data-wow-delay="0.2s">{{ post.header_title }}</h1>
+				<h3 class="cc bounceInLeft" data-wow-delay="0.4s">{{ post.header_subtitle }}</h3>
+				<a href="{{ post.header_button_link }}" class="cc bounceInLeft button type-1" data-wow-delay="0.5s">{{ post.header_button_text }}</a>
+			</div>
+
+		</section>
+		{# End Welcome Header #}
+
+		{# Start Sponsors #}
+		<section id="sponsors">
+
+			<div class="container">
+				{% if post.header_sponsors %}
+					<ul class="sponsors-list">
+						{% set delay_sponsors = 0.2 %}
+						{% for sponsor in post.get_field('header_sponsors') %}
+							<li class="cc fadeInUp" data-wow-delay="{{ delay_sponsors }}s"> 
+								<a href="{{ sponsor.sponsor_url }}" target="_blank">
+									<img src="{{ TimberImage(sponsor.sponsor_image).src }}" alt="{{ sponsor.sponsor_name }}">
+								</a>
+							</li>
+							{% set delay_sponsors = delay_sponsors + 0.2 %}
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</div>
+
+		</section>
+		{# End Sponsors #}
+
+		{# Start Items Content #}
+		<section id="items-content" role="main" class="content-wrapper">
+			
+			<div class="container">
+				{% for item in post.get_field('content_items') %}
+					<div class="item {{ item.item_align }} group cc {{ (item.item_align == 'left') ? 'slideInLeft' : 'slideInRight'}}">
+						<div class="item-image">
+							<img src="{{ TimberImage(item.item_image).src }}" alt="Coders Clan">
+						</div>
+						<div class="item-info">
+							{{ item.item_text }}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+
+		</section>
+		{# End Items Content #}
+
+		{# Start Hero #}
+		<section id="hero-content">
+		
+			<div class="container">
+				<div class="hero-inner">
+					<img src="{{ TimberImage(post.hero_image_big).src }}" class="hero-image-big cc bounceInUp" data-wow-delay="0.3s" alt="Coders Clan">
+					<div class="hero-text-container cc fadeInUp" data-wow-delay="0.6s">
+						<img src="{{ TimberImage(post.hero_image).src }}" class="hero-image-logo" alt="Coders Clan">
+						<div class="hero-text">
+							{{ post.hero_text }}
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</section>
+		{# End Hero #}
+
+		{# Start Slider #}
+		<section id="slider">
+		
+			<div class="container">
+				{{ post.content_slider }}
+				{{ post.content_shortcode|shortcodes }}
+			</div>
+		
+		</section>
+		{# End Slider #}
+
+		{# Start Form #}
+		<section id="form">
+
+			<div class="container">
+				{{ post.form_title }}
+				<div class="form-container">
+					{{ post.form_shortcode|shortcodes }}
+				</div>
+			</div>
+
+		</section>
+		{# End Form #}
+
+		{# Start Footer #}
+		{% block footer %}
+			<footer id="footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+		{# End Footer #}
+
+	</body>
+	{# End Body #}
+</html>

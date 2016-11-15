@@ -1,0 +1,27 @@
+#sponsors{
+    background-color:$color-grey-light;
+    text-align: center;
+    padding:15px 0;
+    .sponsors-list{
+        display: table;
+        margin: 0 auto;
+        li{
+            display: table-cell;
+            vertical-align: bottom;
+            padding: 0px 25px;
+            &:hover{
+                
+            }
+        }
+        a{
+            display:inline-block;
+        }
+    }
+    @media only screen and( min-width:$tablet ){
+        .sponsors-list{
+            li{
+                padding:0 35px;
+            }
+        }
+    }
+}
