@@ -35,23 +35,18 @@ gulp.task('default', ['sass-dev', 'concat-js'], function() {
 
 gulp.task('reload', function(){
     gulp.src('index.html')
-        // .pipe(notify('Reloading HTML'))
         .pipe(livereload())
 })
 
 gulp.task('concat-js', ['clean-js'], function(){
     return gulp.src(paths.js + '/**/*.js')            
-        // .pipe(plumber({errorHandler: notify.onError("<%= error.message %> \n\n→ <%= error.fileName %> \n\n@ <%= error.lineNumber %>")}))
         .pipe(concat(files.js))
         .pipe(uglify())
         .pipe(gulp.dest('.'))
-        // .pipe(notify('Compiled JS'))
-        // .pipe(livereload())
 })
 
 gulp.task('sass-dev', ['clean'], function() {
     gulp.src(paths.sass + files.sass)    
-        // .pipe(plumber({errorHandler: notify.onError("<%= error.message %> \n\n→ <%= error.fileName %> \n\n@ <%= error.lineNumber %>")}))
         .pipe(sassMaps.init())
         .pipe(sass())        
         .pipe(autoprefixer({
@@ -60,13 +55,10 @@ gulp.task('sass-dev', ['clean'], function() {
         }))
         .pipe(sassMaps.write())
         .pipe(gulp.dest(paths.css))
-        // .pipe(notify('Compiled SASS dev'))
-        // .pipe(livereload())
 })
 
 gulp.task('sass-prod', ['clean'], function() {    
     gulp.src(paths.sass + 'main.scss')    
-        // .pipe(plumber({errorHandler: notify.onError("<%= error.message %> \n\n→ <%= error.fileName %> \n\n@ <%= error.lineNumber %>")}))
         .pipe(sass({
             outputStyle: 'compressed'    
         }))
@@ -75,8 +67,6 @@ gulp.task('sass-prod', ['clean'], function() {
             cascade: false
         }))
         .pipe(gulp.dest(paths.css))
-        // .pipe(notify('Compiled SASS prod'))
-        // .pipe(livereload())
 })
 
 gulp.task('clean', function() {
