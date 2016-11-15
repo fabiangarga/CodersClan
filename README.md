@@ -1,7 +1,10 @@
 
 # CodersClan Wordpress Theme
 
-Wordpress theme for the acceptance challenge
+Wordpress theme for the acceptance challenge in CodersClan
+[Demo](http://104.236.86.198/)
+__User:__ kanrisha
+__Pass:__ 1r#88$LEpYLIxiAujJ
 
 ## Theme Specifications
 
