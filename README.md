@@ -22,4 +22,6 @@ Wordpress theme for the acceptance challenge in CodersClan
 ## Theme info
 * Home Page is a Custom Template with Custom Fields, every image, text is editable.
 * Theme settings, header and footer can be edited.
-
+* Animation is made with WOW.js no time to make it Velocity.js
+* Scss Compiled with __gulp-sass__
+ 
